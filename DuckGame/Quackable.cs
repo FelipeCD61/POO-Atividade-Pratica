@@ -1,8 +1,7 @@
-using System;
 namespace DuckGame
 {
-    public interface Quackable
+    public interface IQuackable
     {
-        public void Quack(){        }
+        void Quack();
     }
 }

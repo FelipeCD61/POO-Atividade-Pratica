@@ -1,8 +1,7 @@
-using System;
 namespace DuckGame
 {
-    public interface Quackable
+    public interface IFlyable
     {
-        public void Fly(){        }
+        void Fly();
     }
 }

@@ -1,17 +1,19 @@
-using System;
-
 namespace DuckGame
 {
-    public class Duck : Flyable, Quackable
+    public abstract class Duck
     {
-        public string nome { get; set; }
+        public string Nome { get; set; }
 
         public Duck(string nome)
         {
             Nome = nome;
         }
 
-        public void Swin(){        }
-        public void Display(){        }
+        public void Swim()
+        {
+            Console.WriteLine($"{Nome} está nadando...");
+        }
+
+        public abstract void Display();
     }
 }
