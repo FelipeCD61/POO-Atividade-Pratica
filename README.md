@@ -1,9 +1,7 @@
 # POO-Atividade-Prática
 
-criar menu: um menu que mostra as habilidades dos patos e permite escolher qual vai usar.
+1) Modifique seu programa Simulador de Patos retirando todos os comportamentos que variam da classe Duck e os colocando em interfaces. Continue utilizando herança da Classe Duck para o que repete (ex: display) e faça a escrita dos métodos assinados nas interfaces?
 
-Após escolher, selecionar a habilidade e executá-la
+2) Explique quais os principais ganhos desta estratégia?
 
-Criar mais 3 patos com os mesmos poderes e poderes novos
-
-No mínimo 1 ou mais poderes.
+3)Você a capaz de ver alguma desvantagem nesta estratégia?
