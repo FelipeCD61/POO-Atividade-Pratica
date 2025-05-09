@@ -14,4 +14,4 @@ R: Os principais ganhos são:
   Escalabilidade: o sistema fica mais preparado para crescer e adaptar novos tipos de patos.
 
 Você a capaz de ver alguma desvantagem nesta estratégia?
-R: Não.
+R: Não. Acredito que seja uma boa solução, apesar de ser uma utilização complexa para um problema simples.
