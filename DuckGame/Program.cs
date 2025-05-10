@@ -1,67 +1,65 @@
 ﻿using System;
-using System.Linq.Expressions;
+using System.Collections.Generic;
 
 namespace DuckGame
 {
     class Program
     {
-
         public static void Main(string[] args)
         {
-            Console.Clear();
-            RubberDuck patodebanheira = new RubberDuck("Pato de banheira", "Amarelo");
-            patodebanheira.Display();
+            List<Duck> Ducks = new List<Duck>
+            {
+                new RubberDuck("Pato de Borracha", "Borrachudo"),
+                new RedHatDuck("Pato Chapeuzinho Vermelho", "Voador"),
+                new MaladesaDuck("Pato Chave", "Do Verde"),
+                new SamuraiDuck("Samurai Jack", "Samurai"),
+                new VikingDuck("Thor Duck", "Viking"),
+                new SuperDuck("Super Pato", "Super")
+            };
 
-            //Esperar o usuário pressionar uma tecla
-            Console.WriteLine("\nPressione qualquer tecla para continuar...\n");
-            Console.ReadKey();
+            int opcao = -1;
 
-            RubberDuck patoBoracha = new RubberDuck("Pato Borracha", "Azu");
-            patoBoracha.Display();
-            patoBoracha.Swim();
-            patoBoracha.Quack();
+            while (opcao != 0)
+            {
+                Console.WriteLine("\nEscolha um pato para ver suas habilidades:");
+                for (int i = 0; i < Ducks.Count; i++)
+                {
+                    Console.WriteLine($"{i + 1}. {Ducks[i].Nome}");
+                }
+                Console.WriteLine("0. Sair");
 
-            //Esperar o usuário pressionar uma tecla
-            Console.WriteLine("\nPressione qualquer tecla para continuar...\n");
-            Console.ReadKey();
+                Console.Write("Digite sua opção: ");
+                if (int.TryParse(Console.ReadLine(), out opcao))
+                {
+                    if (opcao > 0 && opcao <= Ducks.Count)
+                    {
+                        Console.WriteLine($"\nVocê escolheu o:");
+                        Ducks[opcao - 1].Display();
+                        Ducks[opcao - 1].Swim();
 
-            RedHatDuck PatoRedHat = new RedHatDuck("Pato Chapéuzinho Vermelho", "Petro");
-            PatoRedHat.Display();
-            PatoRedHat.Swim();
-            PatoRedHat.Quack();
-            PatoRedHat.Fly();
-            
+                        if (Ducks[opcao - 1] is IQuackable quackable)
+                            quackable.Quack();
 
-            //Esperar o usuário pressionar uma tecla
-            Console.WriteLine("\nPressione qualquer tecla para continuar...\n");
-            Console.ReadKey();
+                        if (Ducks[opcao - 1] is IFlyable flyable)
+                            flyable.Fly();
 
-            MaladesaDuck PatoMalado = new MaladesaDuck("Pato Chave", "Petro");
-            PatoMalado.Display();
-            PatoMalado.Quack();
-            PatoMalado.Fly();
-            PatoMalado.Swim();
-            // switch cases = new switch()
-            // {
-            //     case 1:
-            //         Console.WriteLine("Pato de banheira: Amarelo");
-            //     //ele voa
-            //     // ele nada
-            //         break;
-            //     case 2:
-            //         Console.WriteLine("Pato Borracha: Azul");
-            //         break;
-            //     case 3:
-            //         Console.WriteLine("Pato Chapéuzinho Vermelho: Petro");
-            //         break;
-            //     case 4:
-            //         Console.WriteLine("Pato Chave: Petro");
-            //         break;
-            //     default:
-            //         Console.WriteLine("voltar!");
-            //         break;
-                
-            // }
+                        if (Ducks[opcao - 1] is IPower power)
+                            power.UsePower();
+
+                        Console.WriteLine("Pressione qualquer tecla para continuar...");
+                        Console.ReadKey();
+                    }
+                    else if (opcao != 0)
+                    {
+                        Console.WriteLine("Opção inválida. Tente novamente.");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Entrada inválida. Por favor, insira um número.");
+                }
+            }
+            Console.WriteLine("Programa encerrado.");
         }
     }
 }

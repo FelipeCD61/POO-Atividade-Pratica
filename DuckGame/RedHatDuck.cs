@@ -1,8 +1,9 @@
 using System;
+using System.Reflection.Metadata;
 
 namespace DuckGame
 {
-    public class RedHatDuck : Duck, IQuackable, IFlyable
+    public class RedHatDuck : Duck, IQuackable, IFlyable, IPower
     {
         public string Categoria { get; set; }
 
@@ -12,7 +13,7 @@ namespace DuckGame
         }
         public override void Display()
         {
-            Console.WriteLine($"{Nome} é um pato de borracha ({Categoria})!");
+            Console.WriteLine($"{Nome} é um pato de chapeu ({Categoria})!");
         }
 
         public void Fly()
@@ -23,6 +24,11 @@ namespace DuckGame
         public void Quack()
         {
             Console.WriteLine("Quack: Já estudou hoje?");
+        }
+
+        public void UsePower()
+        {
+            Console.WriteLine($"{Nome} usa o Poder do Vôo! Ele voa com seu chapéu!");
         }
     }
 }

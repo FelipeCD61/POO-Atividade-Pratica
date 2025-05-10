@@ -2,7 +2,7 @@ using System;
 
 namespace DuckGame
 {
-    public class MaladesaDuck : Duck, IQuackable, IFlyable
+    public class MaladesaDuck : Duck, IQuackable, IFlyable, IPower
     {
         public string Categoria { get; set; }
 
@@ -10,18 +10,22 @@ namespace DuckGame
         {
             Categoria = categoria;
         }
-
+                public override void Display()
+        {
+            Console.WriteLine($"{Nome} é um pato malado ({Categoria})!");
+        }
         public void Fly()
         {
             Console.WriteLine($"{Nome} está voando malado de mais!");
         }
-        public override void Display()
-        {
-            Console.WriteLine($"{Nome} é um pato de borracha ({Categoria})!");
-        }
         public void Quack()
         {
             Console.WriteLine("Quack Truta");
+        }
+
+        public void UsePower()
+        {
+            Console.WriteLine($"{Nome} usa o Poder do Maladeza! Ele fica malado!");
         }
     }
 }

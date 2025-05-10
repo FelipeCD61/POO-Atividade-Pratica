@@ -2,7 +2,7 @@ using System;
 
 namespace DuckGame
 {
-    public class RubberDuck : Duck, IQuackable
+    public class RubberDuck : Duck, IQuackable, IPower
     {
         public string Categoria { get; set; }
 
@@ -18,6 +18,11 @@ namespace DuckGame
         public void Quack()
         {
             Console.WriteLine("Quack: Eu vou ser o rei dos piratas!");
+        }
+
+        public void UsePower()
+        {
+            Console.WriteLine($"{Nome} usa o Poder do Borracha! Ele se estica!");
         }
     }
 }
