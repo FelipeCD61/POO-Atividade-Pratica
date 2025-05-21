@@ -1,0 +1,61 @@
+# Build results
+bin/
+obj/
+[Bb]uild/
+[Bb]uild[Ll]og.*
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.vs/
+
+# Backup and temporary files
+*.tmp
+*.bak
+*.cache
+*.log
+
+# Visual Studio Code workspace settings
+.vscode/
+
+# NuGet
+*.nupkg
+*.snupkg
+packages/
+*.nuspec
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# DotCover
+.idea/
+*.dotCover
+
+# Resharper
+*.DotSettings.user
+_ReSharper*/
+*.resharper
+*.sln.iml
+
+# Rider
+.idea/
+
+# Windows image cache files
+Thumbs.db
+ehthumbs.db
+
+# Windows crash reports
+*.stackdump
+
+# Rider & VS for Mac cache
+.idea/
+*.sln.iml
+
+# Compiled DLLs, EXEs, PDBs, etc.
+*.dll
+*.exe
+*.pdb
+
+# Web-related
