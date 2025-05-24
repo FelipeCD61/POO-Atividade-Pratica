@@ -9,7 +9,7 @@ namespace DuckSimulatorImproved.Services
     public interface IDuckCommand
     {
         string Name { get; }
-        void Execute();
+        string Execute();
         bool CanExecute(Duck duck);
     }
 
@@ -29,9 +29,9 @@ namespace DuckSimulatorImproved.Services
             return duck is IFlyable;
         }
 
-        public void Execute()
+        public string Execute()
         {
-            _flyable.Fly();
+            return _flyable.Fly();
         }
     }
 
@@ -51,9 +51,9 @@ namespace DuckSimulatorImproved.Services
             return duck is IQuackable;
         }
 
-        public void Execute()
+        public string Execute()
         {
-            _quackable.Quack();
+            return _quackable.Quack();
         }
     }
 
@@ -73,9 +73,9 @@ namespace DuckSimulatorImproved.Services
             return duck is IDanceable;
         }
 
-        public void Execute()
+        public string Execute()
         {
-            _danceable.Dance();
+            return _danceable.Dance();
         }
     }
 
@@ -95,9 +95,9 @@ namespace DuckSimulatorImproved.Services
             return duck is IInvisible;
         }
 
-        public void Execute()
+        public string Execute()
         {
-            _invisible.Disappear();
+            return _invisible.Disappear();
         }
     }
 
@@ -117,9 +117,9 @@ namespace DuckSimulatorImproved.Services
             return true; // Todos os patos podem nadar
         }
 
-        public void Execute()
+        public string Execute()
         {
-            _duck.Swim();
+            return _duck.Swim();
         }
     }
 }

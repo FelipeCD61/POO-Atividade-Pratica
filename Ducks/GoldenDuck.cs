@@ -11,10 +11,10 @@ namespace DuckSimulatorImproved.Ducks
 
         public override string Display() => "Pato Dourado";
 
-        public void Fly() => MessageBox.Show(Display() + " voando alto!");
+        public string Fly() => Display() + " voando alto!";
 
-        public void Quack() => MessageBox.Show(Display() + " grasnando luxuosamente!");
+        public string Quack() => Display() + " grasnando luxuosamente!";
 
-        public void Dance() => MessageBox.Show(Display() + " está dançando majestosamente!");
+        public string Dance() => Display() + " está dançando majestosamente!";
     }
 }

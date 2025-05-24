@@ -11,6 +11,6 @@ namespace DuckSimulatorImproved.Ducks
 
         public override string Display() => "Pato de Borracha";
 
-        public void Quack() => MessageBox.Show(Display() + " faz squeak!");
+        public string Quack() => Display() + " faz squeak!";
     }
 }

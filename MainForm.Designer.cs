@@ -18,6 +18,7 @@ namespace DuckSimulatorImproved
 
         private Label lblStatus;
         private Label lblAbility;
+        private Label lblAction;
 
         protected override void Dispose(bool disposing)
         {
@@ -41,6 +42,7 @@ namespace DuckSimulatorImproved
             this.ghostToolStripMenuItem = new ToolStripMenuItem();
             this.lblStatus = new Label();
             this.lblAbility = new Label();
+            this.lblAction = new Label();
             this.SuspendLayout();
             // menuStrip1
             this.menuStrip1.Items.AddRange(new ToolStripItem[] { this.patosToolStripMenuItem });
@@ -88,10 +90,16 @@ namespace DuckSimulatorImproved
             this.lblAbility.Font = new Font("Segoe UI", 10);
             this.lblAbility.Location = new Point(12, 70);
             this.lblAbility.Text = "Nenhuma habilidade selecionada";
+            // lblAction
+            this.lblAction.AutoSize = true;
+            this.lblAction.Font = new Font("Segoe UI", 10);
+            this.lblAction.Location = new Point(12, 90);
+            this.lblAction.Text = "O pato está paradinho";
             // MainForm
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lblAbility);
             this.Controls.Add(this.lblStatus);
+            this.Controls.Add(this.lblAction);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";

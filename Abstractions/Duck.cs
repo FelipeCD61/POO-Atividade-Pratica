@@ -7,7 +7,7 @@ namespace DuckSimulatorImproved.Abstractions
 
         public string Name { get; }
 
-        public void Swim() => MessageBox.Show(Name + " está nadando!");
+        public string Swim() => Name + " está nadando!";
 
         public abstract string Display();
     }

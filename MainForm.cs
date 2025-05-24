@@ -245,15 +245,15 @@ namespace DuckSimulatorImproved
         {
             if (currentDuck == null)
             {
-                MessageBox.Show("Selecione um pato primeiro!");
+                lblAction.Text = "Selecione um pato primeiro!";
             }
             else if (currentCommand == null)
             {
-                MessageBox.Show("Selecione uma habilidade!");
+                lblAction.Text = "Selecione uma habilidade!";
             }
             else
             {
-                currentCommand.Execute();
+                lblAction.Text = currentCommand.Execute();
             }
         }
     }

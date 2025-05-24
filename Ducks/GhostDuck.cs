@@ -1,5 +1,6 @@
 using DuckSimulatorImproved.Abstractions;
 using DuckSimulatorImproved.Interfaces;
+using DuckSimulatorImproved;
 
 namespace DuckSimulatorImproved.Ducks
 {
@@ -10,6 +11,6 @@ namespace DuckSimulatorImproved.Ducks
         public GhostDuck() : base(Variant) { }
         public override string Display() => "Pato Fantasma";
 
-        public void Disappear() => MessageBox.Show(Display() + " desapareceu!");
+        public string Disappear() => Display() + " desapareceu!";
     }
 }

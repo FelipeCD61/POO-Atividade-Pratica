@@ -11,8 +11,8 @@ namespace DuckSimulatorImproved.Ducks
 
         public override string Display() => "Pato Ruivo";
 
-        public void Fly() => MessageBox.Show(Display() + " voando!");
+        public string Fly() => Display() + " voando!";
 
-        public void Quack() => MessageBox.Show(Display() + " grasnando!");
+        public string Quack() => Display() + " grasnando!";
     }
 }
