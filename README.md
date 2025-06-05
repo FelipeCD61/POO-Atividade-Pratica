@@ -42,3 +42,29 @@ Essa abordagem desacopla a lógica de criação do restante da aplicação e fac
 ### Command Pattern
 As ações executadas pelos patos, como voar, dançar, ou emitir sons, são encapsuladas como comandos (`FlyCommand`, `DanceCommand`, etc.).  
 Esse padrão desacopla a interface gráfica da lógica de execução dos comandos e torna o sistema mais modular e preparado para evoluções, como desfazer ações (undo) ou comandos compostos (macro commands).
+
+## Princípios SOLID Aplicados
+Este projeto também foi desenvolvido com base nos princípios SOLID, fundamentais para a construção de sistemas orientados a objetos bem estruturados e fáceis de manter:
+
+### SRP — Single Responsibility Principle
+Cada classe possui uma responsabilidade única.
+Exemplos:
+
+As classes que representam comportamentos (`FlyWithWings`, `QuackLoud`, `DanceSamba`, etc.) cuidam exclusivamente de seu comportamento específico.
+
+A classe Duck centraliza apenas o que é comum entre todos os patos.
+
+### OCP — Open/Closed Principle
+O sistema está aberto para extensão, mas fechado para modificação.
+É possível adicionar novos tipos de patos ou novos comportamentos sem alterar as classes existentes, graças ao uso de interfaces e composição.
+
+### LSP — Liskov Substitution Principle
+Todas as classes derivadas de `Duck` podem ser usadas onde se espera um Duck, sem comprometer o funcionamento do sistema.
+O mesmo vale para os comandos e interfaces de comportamento.
+
+### ISP — Interface Segregation Principle
+Os comportamentos foram divididos em interfaces específicas (`IFlyable`, `IQuackable`, `IDanceable`, etc.), garantindo que as classes implementem apenas o que realmente utilizam.
+
+### DIP — Dependency Inversion Principle
+As classes dependem de abstrações em vez de implementações concretas.
+Por exemplo, os patos recebem comportamentos que implementam interfaces (`IFlyable`, `IQuackable`) sem conhecer os detalhes internos dessas implementações.
