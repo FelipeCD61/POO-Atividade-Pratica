@@ -25,7 +25,6 @@ namespace DuckSimulatorImproved.Services
             // Lista de todos os comandos possíveis
             var allCommands = new List<IDuckCommand>
             {
-                new SwimCommand(duck),
                 new FlyCommand(duck as IFlyable),
                 new QuackCommand(duck as IQuackable),
                 new DanceCommand(duck as IDanceable),
@@ -33,9 +32,9 @@ namespace DuckSimulatorImproved.Services
             };
 
             // Retorna somente os comandos aplicáveis ao pato
-            return allCommands
+            return [..allCommands
                 .Where(cmd => cmd.CanExecute(duck))
-                .ToList();
+                .ToList(),new SwimCommand(duck)];
         }
     }
 }

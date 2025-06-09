@@ -114,7 +114,7 @@ namespace DuckSimulatorImproved.Services
 
         public bool CanExecute(Duck duck)
         {
-            return true; // Todos os patos podem nadar
+            return duck is Duck; // Todos os patos podem nadar
         }
 
         public string Execute()
